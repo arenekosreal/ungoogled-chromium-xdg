@@ -1,0 +1,19 @@
+pull_request:
+  steps:
+    - branch_package:
+        source_project: home:ZhangHua
+        source_package: ungoogled-chromium-xdg
+        target_project: home:ZhangHua:ungoogled-chromium-xdg
+  filters:
+    event: pull_request
+
+push:
+  steps:
+    - rebuild_package:
+        project: home:ZhangHua
+        package: ungoogled-chromium-xdg
+  filters:
+    event: push
+    branches:
+      only:
+        - main
