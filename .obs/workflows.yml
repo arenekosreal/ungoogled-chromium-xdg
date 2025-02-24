@@ -16,4 +16,4 @@ push:
     event: push
     branches:
       only:
-        - main
+        - master
