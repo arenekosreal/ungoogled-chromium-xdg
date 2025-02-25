@@ -9,6 +9,9 @@ pull_request:
 
 push:
   steps:
+    - trigger_services:
+        project: home:ZhangHua
+        package: ungoogled-chromium-xdg
     - rebuild_package:
         project: home:ZhangHua
         package: ungoogled-chromium-xdg
