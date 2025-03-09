@@ -179,6 +179,7 @@ prepare() {
 
   # Link to system tools required by the build
   mkdir -p third_party/node/linux/node-linux-x64/bin
+  mkdir -p third_party/jdk/current/bin
   ln -s /usr/bin/node third_party/node/linux/node-linux-x64/bin/
   ln -s /usr/bin/java third_party/jdk/current/bin/
 
