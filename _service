@@ -1,6 +1,6 @@
 <services>
   <service name="download_url">
-    <param name="url">https://commondatastorage.googleapis.com/chromium-browser-official/chromium-134.0.6998.88.tar.xz</param>
+    <param name="url">https://commondatastorage.googleapis.com/chromium-browser-official/chromium-134.0.6998.88-lite.tar.xz</param>
   </service>
   <service name="download_url">
     <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/134.0.6998.88-1.tar.gz</param>
