@@ -11,6 +11,10 @@
 
 # binary version of this package (-bin): github.com/noahvogt/ungoogled-chromium-xdg-bin-aur
 
+# Open Build Service:
+# Pathname can't be converted from UTF-8 to current locale.
+export LANG=C.UTF-8
+
 pkgname=ungoogled-chromium-xdg
 pkgver=136.0.7103.59
 pkgrel=1
