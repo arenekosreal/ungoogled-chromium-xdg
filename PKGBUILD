@@ -13,7 +13,7 @@
 
 # Open Build Service:
 # Pathname can't be converted from UTF-8 to current locale.
-export LANG=C.UTF-8
+export LANG=C.utf-8
 
 pkgname=ungoogled-chromium-xdg
 pkgver=136.0.7103.59
