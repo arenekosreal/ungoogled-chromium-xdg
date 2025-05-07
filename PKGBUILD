@@ -11,10 +11,6 @@
 
 # binary version of this package (-bin): github.com/noahvogt/ungoogled-chromium-xdg-bin-aur
 
-# Open Build Service:
-# Pathname can't be converted from UTF-8 to current locale.
-export LANG=C.utf-8
-
 pkgname=ungoogled-chromium-xdg
 pkgver=136.0.7103.59
 pkgrel=1
@@ -117,6 +113,10 @@ depends+=(${_system_libs[@]})
 #
 # Starting with Chromium 89 (2021-03-02) the OAuth2 credentials have been left
 # out: https://archlinux.org/news/chromium-losing-sync-support-in-early-march/
+
+# Open Build Service:
+# Pathname can't be converted from UTF-8 to current locale.
+export LANG=C.utf-8
 
 prepare() {
   if (( _manual_clone )); then
