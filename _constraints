@@ -5,7 +5,8 @@
     </disk>
 
     <physicalmemory>
-      <size unit="G">24</size>
+      <size unit="G">32</size>
     </physicalmemory>
+    <processors>16</processors>
   </hardware>
 </constraints>
