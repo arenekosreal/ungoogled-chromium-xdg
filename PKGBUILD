@@ -47,7 +47,7 @@ sha256sums=('140e6a3b5f21f128d807812befdc15bc1eb0b1bf9c9f4445414236272b50646e'
             'a6507371588ed4d87d6501220249264abfbcd814771cc1ba351e0ac6cc987400'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             'e6da901e4d0860058dc2f90c6bbcdc38a0cf4b0a69122000f62204f24fa7e374'
-            'dd5e27bae712979a8f213f326d70df9be9b2e52dbd15bfc46c8af89241592f29')
+            'f57b85a3c5a322e149ba0d399e16476cc8e1ff1b68bd36d213cdfe35cace93b2')
 
 # ungoogled-chromium-xdg patches
 source=(${source[@]}

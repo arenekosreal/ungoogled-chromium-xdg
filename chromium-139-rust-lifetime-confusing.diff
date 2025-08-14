@@ -24,19 +24,6 @@ Commit-Queue: Michael Spang <spang@chromium.org>
 Cr-Commit-Position: refs/heads/main@{#1487828}
 ---
 
-diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index ce390e5..b67110b 100644
---- a/build/config/compiler/BUILD.gn
-+++ b/build/config/compiler/BUILD.gn
-@@ -2197,9 +2197,6 @@
-   # an error by default eventually; see
-   # https://github.com/rust-lang/rust/issues/71668
-   rustflags = [ "-Dunsafe_op_in_unsafe_fn" ]
--
--  # TODO(crbug.com/424424323): Clean up and enable.
--  rustflags += [ "-Amismatched_lifetime_syntaxes" ]
- }
- 
  # prevent_unsafe_narrowing ----------------------------------------------------
 diff --git a/mojo/public/rust/system/data_pipe.rs b/mojo/public/rust/system/data_pipe.rs
 index 9b8d96e..0ed4fee 100644
