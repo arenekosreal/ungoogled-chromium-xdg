@@ -37,12 +37,14 @@ options=('!lto') # Chromium adds its own flags for ThinLTO
 source=(https://commondatastorage.googleapis.com/chromium-browser-official/chromium-$pkgver-lite.tar.xz
         https://github.com/foutrelis/chromium-launcher/archive/v$_launcher_ver/chromium-launcher-$_launcher_ver.tar.gz
         chromium-138-nodejs-version-check.patch
+        chromium-139-rust-lifetime-confusing.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch)
 sha256sums=('140e6a3b5f21f128d807812befdc15bc1eb0b1bf9c9f4445414236272b50646e'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
+            '7e34e509a2560e5d02b119b2bfc242c97b5d339cffe65f1f8b73c555ff9cee3d'
             'a6507371588ed4d87d6501220249264abfbcd814771cc1ba351e0ac6cc987400'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             'e6da901e4d0860058dc2f90c6bbcdc38a0cf4b0a69122000f62204f24fa7e374')
@@ -140,6 +142,9 @@ prepare() {
 
   # Fixes from Gentoo
   patch -Np1 -i ../chromium-138-nodejs-version-check.patch
+
+  # Fix error: hiding a lifetime that's elided elsewhere is confusing
+  patch -Np1 -i ../chromium-139-rust-lifetime-confusing.patch
 
   # Allow libclang_rt.builtins from compiler-rt >= 16 to be used
   patch -Np1 -i ../compiler-rt-adjust-paths.patch
