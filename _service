@@ -4,7 +4,7 @@
   </service>
   <service name="download_url">
     <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/139.0.7258.154-1.tar.gz</param>
-    <param name="filename">ungoogled-chromium-139.0.7258.156-1.tar.gz</param>
+    <param name="filename">ungoogled-chromium-139.0.7258.154-1.tar.gz</param>
   </service>
   <service name="download_url">
     <param name="url">https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz</param>
