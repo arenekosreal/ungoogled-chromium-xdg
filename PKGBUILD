@@ -41,7 +41,8 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch
-        chromium-140.0.7339.41-rust.patch)
+        chromium-140.0.7339.41-rust.patch
+        chromium-140.0.7339.185-Define-__rust_alloc_error_handler_should_panic_v2.diff)
 sha256sums=('a7b9a8dd5ddd65fb756bf35fb9180fca26ec59e1d55bbb105e05483ff15135b8'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
@@ -49,7 +50,8 @@ sha256sums=('a7b9a8dd5ddd65fb756bf35fb9180fca26ec59e1d55bbb105e05483ff15135b8'
             '75681c815bb2a8c102f0d7af3a3790b5012adbbce38780716b257b7da2e1c3d5'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             'e6da901e4d0860058dc2f90c6bbcdc38a0cf4b0a69122000f62204f24fa7e374'
-            '0eb47afd031188cf5a3f0502f3025a73a1799dfa52dff9906db5a3c2af24e2eb')
+            '0eb47afd031188cf5a3f0502f3025a73a1799dfa52dff9906db5a3c2af24e2eb'
+            'b9a07a5a52e2b8cae79909fbdb72ca5909030e7460b5375ce2962054553d9964')
 
 # ungoogled-chromium-xdg patches
 source=(${source[@]}
@@ -154,6 +156,9 @@ prepare() {
 
   # Increase _FORTIFY_SOURCE level to match Arch's default flags
   patch -Np1 -i ../increase-fortify-level.patch
+
+  # Fix symbol __rust_alloc_error_handler_should_panic_v2 is not found by ld.lld
+  patch -Np1 -i ../chromium-140.0.7339.185-Define-__rust_alloc_error_handler_should_panic_v2.diff
 
   # Custom Patches
 
