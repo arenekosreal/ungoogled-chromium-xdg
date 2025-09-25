@@ -12,7 +12,7 @@
 # binary version of this package (-bin): github.com/noahvogt/ungoogled-chromium-xdg-bin-aur
 
 pkgname=ungoogled-chromium-xdg
-pkgver=140.0.7339.185
+pkgver=140.0.7339.207
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
@@ -43,7 +43,7 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         use-oauth2-client-switches-as-default.patch
         chromium-140.0.7339.41-rust.patch
         chromium-140.0.7339.185-Define-__rust_alloc_error_handler_should_panic_v2.diff)
-sha256sums=('a7b9a8dd5ddd65fb756bf35fb9180fca26ec59e1d55bbb105e05483ff15135b8'
+sha256sums=('c314099317e5a4cdf287ca20d1e08c4d00b763dc29e6e424f57f72f469db6e31'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '5abc8611463b3097fc5ce58017ef918af8b70d616ad093b8b486d017d021bbdf'
@@ -76,7 +76,7 @@ optdepends=("${optdepends[@]}"
 source=(${source[@]}
         ${pkgname%-*}-$_uc_ver.tar.gz::https://github.com/$_uc_usr/ungoogled-chromium/archive/refs/tags/$_uc_ver.tar.gz)
 sha256sums=(${sha256sums[@]}
-            'cb7861ba6b47fd1bb00dd84981c34cc29a9792d6eb115149a905453f1159fdb8')
+            '6592c09f06a2adcbfc8dba3e216dc3a08ca2f8c940fc2725af90c5d042404be9')
 
 # Possible replacements are listed in build/linux/unbundle/replace_gn_files.py
 # Keys are the names in the above script; values are the dependencies in Arch
