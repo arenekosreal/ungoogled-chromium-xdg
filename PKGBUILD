@@ -91,7 +91,7 @@ declare -gA _system_libs=(
   #[libaom]=aom
   #[libavif]=libavif  # needs -DAVIF_ENABLE_EXPERIMENTAL_GAIN_MAP=ON
   [libjpeg]=libjpeg-turbo
-  [libpng]=libpng
+  #[libpng]=libpng    # libpng has been replaced by the png rust crate
   #[libvpx]=libvpx
   [libwebp]=libwebp
   [libxml]=libxml2
