@@ -1,10 +1,10 @@
 <services>
   <service name="download_url">
-    <param name="url">https://commondatastorage.googleapis.com/chromium-browser-official/chromium-146.0.7680.177-lite.tar.xz</param>
+    <param name="url">https://commondatastorage.googleapis.com/chromium-browser-official/chromium-147.0.7727.55-lite.tar.xz</param>
   </service>
   <service name="download_url">
-    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/146.0.7680.177-1.tar.gz</param>
-    <param name="filename">ungoogled-chromium-146.0.7680.177-1.tar.gz</param>
+    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/147.0.7727.55-1.tar.gz</param>
+    <param name="filename">ungoogled-chromium-147.0.7727.55-1.tar.gz</param>
   </service>
   <service name="download_url">
     <param name="url">https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz</param>
