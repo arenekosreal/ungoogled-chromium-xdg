@@ -1,6 +1,6 @@
 <services>
   <service name="download_url">
-    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/149.0.7827.102-1.tar.gz</param>
-    <param name="filename">ungoogled-chromium-149.0.7827.102-1.tar.gz</param>
+    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/149.0.7827.114-1.tar.gz</param>
+    <param name="filename">ungoogled-chromium-149.0.7827.114-1.tar.gz</param>
   </service>
 </services>
