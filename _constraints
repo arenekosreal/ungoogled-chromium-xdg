@@ -7,6 +7,6 @@
     <physicalmemory>
       <size unit="G">40</size>
     </physicalmemory>
-    <processors>64</processors>
+    <processors>24</processors>
   </hardware>
 </constraints>
