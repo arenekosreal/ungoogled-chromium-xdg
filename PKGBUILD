@@ -148,7 +148,7 @@ sha256sums=('d9e8b637dbdd3a1cccb4966e81a66e3f3c4c29f5ce9732a70f5a4f949cd03923'
 if (( _manual_clone )); then
   source[0]=fetch-chromium-release
   sha256sums[0]='2e2f36e3cd1ebc4ad57fd310774a5e5e9db77883d5f9374fedeaabd3c103b819'
-  makedepends+=('python-httplib2' 'python-pyparsing' 'python-six' 'npm' 'rsync')
+  makedepends+=('python-httplib2' 'python-pyparsing' 'npm' 'rsync')
 fi
 
 provides=("chromium=${pkgver}" "chromedriver=${pkgver}")
