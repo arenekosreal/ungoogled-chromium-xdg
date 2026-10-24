@@ -1,12 +1,3 @@
-pull_request:
-  steps:
-    - branch_package:
-        source_project: home:ZhangHua
-        source_package: ungoogled-chromium-xdg
-        target_project: home:ZhangHua:ungoogled-chromium-xdg
-  filters:
-    event: pull_request
-
 push:
   steps:
     - trigger_services:
