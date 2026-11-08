@@ -101,6 +101,7 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         "crubit-$_crubit_rev.tar.gz::https://github.com/google/crubit/archive/$_crubit_rev.tar.gz"
         "ungoogled-chromium-$_uc_ver.tar.gz::https://github.com/$_uc_usr/ungoogled-chromium/archive/$_uc_ver.tar.gz"
         https://github.com/foutrelis/chromium-launcher/archive/v$_launcher_ver/chromium-launcher-$_launcher_ver.tar.gz
+        obs-inputs.tar.zst
         chromium-138-nodejs-version-check.patch
         chromium-145-fix-SYS_SECCOMP.patch
         chromium-147-rust-1.95-bytemuck.patch
@@ -127,6 +128,7 @@ sha256sums=('6f7f34ef0f249374ee959c701a139e5d19860c1c02bc2e04f010e437cc744863'
             '8ca6d914b86d23b942a2158183a956c30a0aa8f3b23b305168d18b9f021e33f1'
             '41d8f7b470b702bede9aa59bb0e68742c215d66d45d9c7c84789c87918854a6e'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
+            '36828f9459607dabcfb49e92fb16c2b7db645a254f900f42272b6476d47eab21'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05'
@@ -138,7 +140,6 @@ sha256sums=('6f7f34ef0f249374ee959c701a139e5d19860c1c02bc2e04f010e437cc744863'
             'ebf74154266d0b6d6cc957c413f845052c5fcfce7745befb8821595cdf3f7d49'
             '2ab9fbe653829ce692f83ee780aad07e8c83a6686e51ab9459ad736cfa2850ee'
             'ded2abcb912ac4b6ad139e56384eea8f3b470cf57ecb0baa2c2d042df7575a23'
-            '07a535920b2c5e2988c8a3287fafdfc975fef486ab4bfe8c31fd3bd1bedac3c8'
             'f6aefbd3f70dbda9242cf815a1dca56af729632166bc57e5067755b119cc95de'
             '3b663878c6b05e612ba103152c48f91dde27cabe7d55ba48427a72829ff4922f'
             '655a43eaff824ba27f359790c31c43abd9fc4234026b0d039b8f2633dcb057cb'
@@ -369,8 +370,8 @@ prepare() {
   cd ../crubit-$_crubit_rev
   export RUSTUP_TOOLCHAIN=stable
   export RUSTUP_HOME="$srcdir/rustup-toolchain"
-  cargo fetch --locked --target host-tuple
-  rustup component add rustc-dev rust-src llvm-tools
+  #cargo fetch --locked --target host-tuple
+  #rustup component add rustc-dev rust-src llvm-tools
 }
 
 build() {
@@ -497,6 +498,7 @@ build() {
     cd ../crubit-$_crubit_rev
     _rustc_libs="$_rust_sysroot/lib/rustlib/$(rustc --print host-tuple)/lib"
     export CARGO_TARGET_DIR=target
+    export CARGO_HOME="$srcdir/cargo"
     export RUSTC_BOOTSTRAP=1
     export RUSTFLAGS+=" -Clink-args=-Wl,-z,origin -Clink-args=-Wl,-rpath,$_rustc_libs"
     cargo build --locked --release -p cc_bindings_from_rs --bin cc_bindings_from_rs
