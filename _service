@@ -1,7 +1,7 @@
 <services>
   <service name="download_url">
-    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/157.0.8103.38-1.tar.gz</param>
-    <param name="filename">ungoogled-chromium-157.0.8103.38-1.tar.gz</param>
+    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/157.0.8103.50-1.tar.gz</param>
+    <param name="filename">ungoogled-chromium-157.0.8103.50-1.tar.gz</param>
   </service>
   <service name="download_url">
     <param name="url">https://github.com/google/crubit/archive/25d2c01bde904c3333bb2d48201e5cbb186a1c7f.tar.gz</param>
