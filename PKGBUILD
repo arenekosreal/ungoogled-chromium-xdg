@@ -15,7 +15,7 @@
 # binary version of this package (-bin): github.com/noahvogt/ungoogled-chromium-xdg-bin-aur
 
 pkgname=ungoogled-chromium-xdg
-pkgver=157.0.8103.50
+pkgver=157.0.8103.78
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
@@ -84,8 +84,10 @@ makedepends=(
   'pipewire'
   'python'
   'qt6-base'
-  'rustup'
+  'rust'
   'rust-bindgen'
+  'rust-src'
+  'rustc-dev'
   'typescript'
   'vulkan-headers'
 )
@@ -124,11 +126,11 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         glibc-2.42-baud-rate-fix.patch
         # ungoogled-chromium-xdg patches
         no-omnibox-suggestion-autocomplete.patch)
-sha256sums=('6511dc3808736004f03a82397a2fa251757f4b6632e2d848bc79ee25b77c7f0f'
+sha256sums=('9fdce9d3c866f97f14f7a4250915e8e5b729dc952fcfb3a35507b126233f0660'
             '8ca6d914b86d23b942a2158183a956c30a0aa8f3b23b305168d18b9f021e33f1'
-            '85f0af6585de1e84cd01d5e9dbd3d0c2f300515055c16d08db18b7c8e007cc1f'
+            '4028ace0113428dd9ffb0d27f27a54af1b3c1cec9431862ea130ec7f5a74cf9f'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
-            '36828f9459607dabcfb49e92fb16c2b7db645a254f900f42272b6476d47eab21'
+            'b29f25e8eda9aba21285aa12bd6725eaafa5ccc2755c0e8b46ab2abc7434077e'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05'
@@ -367,11 +369,8 @@ prepare() {
       --header gpu/webgpu/dawn_commit_hash.h
   fi
 
-  cd ../crubit-$_crubit_rev
-  export RUSTUP_TOOLCHAIN=stable
-  export RUSTUP_HOME="$srcdir/rustup-toolchain"
+  cd third_party/rust-toolchain/crubit/lib/third_party/crubit
   #cargo fetch --locked --target host-tuple
-  #rustup component add rustc-dev rust-src llvm-tools
 }
 
 build() {
@@ -391,11 +390,8 @@ build() {
     export AR=$_clang_path/llvm-ar
     export NM=$_clang_path/llvm-nm
   fi
-  export RUSTUP_HOME="$srcdir/rustup-toolchain"
-  export RUSTUP_TOOLCHAIN=stable
   # /usr for pacman managed rust
-  local _rust_sysroot="$RUSTUP_HOME/toolchains/$RUSTUP_TOOLCHAIN-$(rustc --print host-tuple)"
-
+  local _rust_sysroot="/usr"
 
   local _flags=(
     'custom_toolchain="//build/toolchain/linux/unbundle:default"'
@@ -495,7 +491,7 @@ build() {
   fi
 
   (
-    cd ../crubit-$_crubit_rev
+    cd third_party/rust-toolchain/crubit/lib/third_party/crubit
     _rustc_libs="$_rust_sysroot/lib/rustlib/$(rustc --print host-tuple)/lib"
     export CARGO_TARGET_DIR=target
     export CARGO_HOME="$srcdir/cargo"
