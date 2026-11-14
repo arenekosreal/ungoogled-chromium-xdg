@@ -9,6 +9,6 @@
   </service>
   <service name="download_url">
     <param name="url">https://github.com/arenekosreal/ungoogled-chromium-xdg/releases/download/obs-inputs/obs-inputs.tar.zst</param>
-    <param name="filename">obs-inputs.tar.zst</param>
+    <param name="filename">obs-inputs-157.0.8103.78.tar.zst</param>
   </service>
 </services>

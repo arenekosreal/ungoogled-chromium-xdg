@@ -103,7 +103,7 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         "crubit-$_crubit_rev.tar.gz::https://github.com/google/crubit/archive/$_crubit_rev.tar.gz"
         "ungoogled-chromium-$_uc_ver.tar.gz::https://github.com/$_uc_usr/ungoogled-chromium/archive/$_uc_ver.tar.gz"
         https://github.com/foutrelis/chromium-launcher/archive/v$_launcher_ver/chromium-launcher-$_launcher_ver.tar.gz
-        obs-inputs.tar.zst
+        obs-inputs-$pkgver.tar.zst
         chromium-138-nodejs-version-check.patch
         chromium-145-fix-SYS_SECCOMP.patch
         chromium-147-rust-1.95-bytemuck.patch
