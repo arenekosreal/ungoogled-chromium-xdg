@@ -80,7 +80,6 @@ makedepends=(
   'lld'
   'ninja'
   'nodejs'
-  'opus'
   'pipewire'
   'python'
   'qt6-base'
