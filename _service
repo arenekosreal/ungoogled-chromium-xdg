@@ -1,14 +1,14 @@
 <services>
   <service name="download_url">
-    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/158.0.8127.36-1.tar.gz</param>
-    <param name="filename">ungoogled-chromium-158.0.8127.36-1.tar.gz</param>
+    <param name="url">https://github.com/ungoogled-software/ungoogled-chromium/archive/refs/tags/158.0.8127.88-1.tar.gz</param>
+    <param name="filename">ungoogled-chromium-158.0.8127.88-1.tar.gz</param>
   </service>
   <service name="download_url">
     <param name="url">https://github.com/google/crubit/archive/d757594f6f7ac27c0cf9c8ea63d9136f8e1f77ae.tar.gz</param>
     <param name="filename">crubit-d757594f6f7ac27c0cf9c8ea63d9136f8e1f77ae.tar.gz</param>
   </service>
   <service name="download_url">
-    <param name="url">https://github.com/arenekosreal/ungoogled-chromium-xdg/releases/download/obs-inputs/obs-inputs.tar.zst</param>
-    <param name="filename">obs-inputs-158.0.8127.36.tar.zst</param>
+    <param name="url">https://github.com/arenekosreal/ungoogled-chromium-xdg/releases/download/obs-inputs/obs-inputs-158.0.8127.88.tar.zst</param>
+    <param name="filename">obs-inputs-158.0.8127.88.tar.zst</param>
   </service>
 </services>
